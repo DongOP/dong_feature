@@ -23,7 +23,7 @@ public class ScreenShotUtils {
 
     public void doScreenshot(Activity activity) {
         if (null == activity) {
-            Utils.logd(TAG, "The activity sis null.");
+            Utils.logd(TAG, "The activity is null.");
             return;
         }
         Utils.logd(TAG, "doScreenshot.");
