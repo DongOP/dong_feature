@@ -38,7 +38,7 @@ public class ScreenShotUtils {
                 SDcardUtils.makesureFileDirExists(SDcardUtils.getScreenImageDir());
                 // 图片文件路径 /storage/emulated/0/MSS/screenshot/20180630123322.png
                 String filePath = SDcardUtils.getScreenImageDir() + TimeUtils.getCurTime() + ".png";
-                Utils.loge(TAG, "filePath=" + filePath);
+                Utils.logd(TAG, "filePath=" + filePath);
 
                 File file = null;
                 try {
