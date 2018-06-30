@@ -12,6 +12,9 @@ import com.dong.cutoffscreen.utils.ScreenShotUtils;
 import com.dong.cutoffscreen.utils.TimeUtils;
 
 
+/**
+ * Created by Dong on 2018/6/30.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ImageView mImage1;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         mContext = this;
-        mImage1 =findViewById(R.id.image_1);
+        mImage1 = findViewById(R.id.image_1);
         mTakePhotots = findViewById(R.id.btn_screenshot);
         mShowTime = findViewById(R.id.show_time);
 

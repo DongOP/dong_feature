@@ -17,7 +17,7 @@ public class ScreenShotUtils {
     private static final String TAG = "ScreenShotUtils";
     private static final ScreenShotUtils instance = new ScreenShotUtils();
 
-    public static ScreenShotUtils getInstance(){
+    public static ScreenShotUtils getInstance() {
         return instance;
     }
 
@@ -49,7 +49,6 @@ public class ScreenShotUtils {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
                 FileOutputStream os = new FileOutputStream(file);
                 bmp.compress(Bitmap.CompressFormat.PNG, 100, os);
                 os.flush();
