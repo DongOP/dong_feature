@@ -1,8 +1,8 @@
 package com.dong.cutoffscreen;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,7 +15,7 @@ import com.dong.cutoffscreen.utils.TimeUtils;
 /**
  * Created by Dong on 2018/6/30.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private ImageView mImage1;
     private Button mTakePhotots;
