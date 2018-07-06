@@ -3,4 +3,47 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="btn_blue">#5291fc</color> <!-- 按钮 蓝色 normal status -->
+    <color name="theme_color_normal">#CCCCCC</color>
+    <color name="theme_color_pressed">#F7A326</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#70000000</color>
+    <color name="dialog_content_bg">#fafafa</color>
+    <color name="seekbar_normal">#bbbcbd</color>
+    <color name="seekbar_progress">#2da4d2</color>
+    <!-- 设置左侧菜单背景色  灰白 -->
+    <color name="menu_bg">#DDDFDF</color>
+    <color name="disable">#70ffffff</color>
+    <color name="gray">#a1a1a1</color>
+    <color name="grey">#a1a1a1</color>
+    <color name="content_frame_color">#bcbdbf</color>
+
+    <drawable name="transparent">#00000000</drawable>
+    <drawable name="title_line">#e4e4e4</drawable>
+    <drawable name="list_divider">#102a37</drawable>
+    <drawable name="content_list_divider">#004868</drawable>
+    <drawable name="single_choice_list_divider">#bcbdbf</drawable>
+    <color name="bg_item">#F7A326</color>
+    <!-- 设置内容界面背景色 -->
+    <color name="bg">#ffffff</color>
+    <color name="dialog_delete_user">#FF0000</color>
+
+    <!-- add for yeke by dong-->
+    <color name="main_meun_text">#5e5e5e</color>
+    <color name="action_bar_bg">#8c8c8c</color>
+    <color name="wifi_text_color">#333333</color>
+
+    <color name="grey_translucence">#8fa1a1a1</color>   <!-- 半透明 -->
+    <color name="grey_space">#999999</color>     <!-- 灰色、存储管理item -->
+    <color name="cream_white">#F5FFFA</color>     <!-- 薄荷奶油白 -->
+    <color name="dialog_user_bg">#F0F0F0</color>
+    <color name="textcolor">#333333</color>
+
+
+    <color name="uncompleted_color">#C0C0C0</color>
+    <color name="uncompleted_text_color">#F8F8F8</color>
+    <color name="yellow">#FF7F00</color>
 </resources>
