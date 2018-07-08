@@ -26,8 +26,8 @@ public class ImageUtils {
     /**
      * 根据坐标获取图片RGBA信息
      *
-     * @param x x
-     * @param y
+     * @param x x轴坐标
+     * @param y y轴坐标
      */
     public void getImageRGBA(Bitmap bitmap, int x, int y) {
         // 获取图片坐标点的颜色
