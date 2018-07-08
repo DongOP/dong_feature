@@ -63,7 +63,7 @@ public class ScreenShotUtils {
     }
 
     /**
-     * 从Stream中获取图片某个坐标的像素值
+     * 获取图片某个坐标的像素值
      */
     public int getStreamPixel(Activity activity, int x, int y) {
         if (null == activity) {
