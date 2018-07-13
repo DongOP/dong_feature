@@ -24,10 +24,10 @@ public class ScreenShotUtils {
     // 截图并保存到本地MSS/screenshot目录下
     public void doScreenshot(Activity activity) {
         if (null == activity) {
-            Utils.logd(TAG, "The activity is null.");
+            LogUtils.logd(TAG, "The activity is null.");
             return;
         }
-        Utils.logd(TAG, "doScreenshot.");
+        LogUtils.logd(TAG, "doScreenshot.");
         // 获取屏幕
         View dView = activity.getWindow().getDecorView();
         dView.setDrawingCacheEnabled(true);
@@ -42,7 +42,7 @@ public class ScreenShotUtils {
                 String imageName = "MSS截屏_" + TimeUtils.getCurTime() + ".png";
                 // 图片文件路径 /storage/emulated/0/MSS/screenshot/MSS截屏_20180630123322.png
                 String filePath = SDcardUtils.getScreenImageDir() + imageName;
-                Utils.logd(TAG, "filePath=" + filePath);
+                LogUtils.logd(TAG, "filePath=" + filePath);
 
                 File file = null;
                 try {
@@ -67,7 +67,7 @@ public class ScreenShotUtils {
      */
     public int getStreamPixel(Activity activity, int x, int y) {
         if (null == activity) {
-            Utils.logd(TAG, "The activity is null.");
+            LogUtils.logd(TAG, "The activity is null.");
             return -1;
         }
         // 获取屏幕
@@ -76,7 +76,7 @@ public class ScreenShotUtils {
         dView.buildDrawingCache();
         Bitmap bmp = dView.getDrawingCache();
         int px = bmp.getPixel(x, y);
-        Utils.logd(TAG, "像素值=" + px);
+        LogUtils.logd(TAG, "像素值=" + px);
         return px;
     }
 

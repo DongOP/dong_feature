@@ -36,7 +36,7 @@ public class ImageUtils {
         int g = Color.green(color);
         int b = Color.blue(color);
         int a = Color.alpha(color);
-        Utils.logd(TAG, "r=" + r + ",g=" + g + ",b=" + b + ",a=" + a);
+        LogUtils.logd(TAG, "r=" + r + ",g=" + g + ",b=" + b + ",a=" + a);
     }
 
     /**
@@ -98,7 +98,7 @@ public class ImageUtils {
 //        }
         FileInputStream fis = new FileInputStream(file);
         if (null == fis) {
-            Utils.logd(TAG, "File is null.");
+            LogUtils.logd(TAG, "File is null.");
             return null;
         }
 

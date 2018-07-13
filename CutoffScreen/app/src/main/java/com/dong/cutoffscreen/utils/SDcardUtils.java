@@ -56,9 +56,9 @@ public class SDcardUtils {
             FileOutputStream fout = new FileOutputStream(file);
             fout.write(byteContent);
             fout.close();
-            Utils.logd("WXCode", "获取并写入成功，图片byte[]文件保存在=" + strFilePath);
+            LogUtils.logd("WXCode", "获取并写入成功，图片byte[]文件保存在=" + strFilePath);
         } catch (Exception e) {
-            Utils.loge("WXCode", "Error on write File:" + e);
+            LogUtils.loge("WXCode", "Error on write File:" + e);
         }
     }
 

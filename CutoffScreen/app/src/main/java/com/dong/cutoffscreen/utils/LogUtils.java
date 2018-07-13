@@ -7,7 +7,7 @@ import android.util.Log;
  * Created by Dong on 2018/6/30.
  */
 
-public class Utils {
+public class LogUtils {
     public static final boolean isDebug = true;
 
     public static void logd(String tag, String msg) {
