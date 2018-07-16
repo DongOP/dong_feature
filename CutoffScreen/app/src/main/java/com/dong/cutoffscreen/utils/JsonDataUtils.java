@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 模拟生成json数据
+ * 模拟生成、解析json数据
  * <p>
  * Created by Dong on 2018/7/13.
  */
@@ -69,7 +69,6 @@ public class JsonDataUtils {
                         JSONObject json = jsonBP.getJSONObject(i);
                         begin_x = json.optInt(X_POINT);
                         begin_y = json.optInt(Y_POINT);
-
                     }
                 }
                 // 解析结束坐标点
@@ -81,12 +80,10 @@ public class JsonDataUtils {
                         JSONObject json = jsonEP.getJSONObject(i);
                         end_x = json.optInt(X_POINT);
                         end_y = json.optInt(Y_POINT);
-
                     }
                 }
                 LogUtils.logd(TAG, "parseJson, begin_time=" + begin_time + ", end_time=" + end_time + ", begin_x=" + begin_x + ", begin_y" + begin_y + ", end_x=" + end_x + ", end_y" + end_y);
             }
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
