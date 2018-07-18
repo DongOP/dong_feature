@@ -68,7 +68,7 @@ public class ScreenShotUtils {
     public int getStreamPixel(Activity activity, int x, int y) {
         if (null == activity) {
             LogUtils.logd(TAG, "The activity is null.");
-            return -1;
+            return 0;
         }
         // 获取屏幕
         View dView = activity.getWindow().getDecorView();

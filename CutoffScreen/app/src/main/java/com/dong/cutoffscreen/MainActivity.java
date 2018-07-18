@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dong.cutoffscreen.utils.DeviceInfoUtils;
 import com.dong.cutoffscreen.utils.JsonDataUtils;
 import com.dong.cutoffscreen.utils.ScreenShotUtils;
 import com.dong.cutoffscreen.utils.TimeUtils;
@@ -65,6 +66,7 @@ public class MainActivity extends Activity {
 
         // 测试
         JsonDataUtils.buildJson();
+        DeviceInfoUtils.getWindowInfo(mContext);
     }
 
     private class ImageOnTouchListener implements View.OnTouchListener {
