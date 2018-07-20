@@ -13,10 +13,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dong.cutoffscreen.utils.CoordinateUtils;
 import com.dong.cutoffscreen.utils.DeviceInfoUtils;
 import com.dong.cutoffscreen.utils.JsonDataUtils;
+import com.dong.cutoffscreen.utils.LogUtils;
 import com.dong.cutoffscreen.utils.ScreenShotUtils;
 import com.dong.cutoffscreen.utils.TimeUtils;
+
+import java.util.Map;
 
 
 /**
@@ -26,11 +30,12 @@ public class MainActivity extends Activity {
 
     private static final String TAG = "MainActivity";
     private ImageView mImage1;
-    private Button mTakePhotots;
+    private Button mTakePhotos;
     private TextView mShowTime, mShowRGBA;
     private Context mContext;
     private Bitmap mBitmap;
     private LinearLayout mLLayout;
+    private String mOperatingMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +48,7 @@ public class MainActivity extends Activity {
     private void initView() {
         mContext = this;
         mImage1 = (ImageView) findViewById(R.id.image_1);
-        mTakePhotots = (Button) findViewById(R.id.btn_screenshot);
+        mTakePhotos = (Button) findViewById(R.id.btn_screenshot);
         mShowTime = (TextView) findViewById(R.id.show_time);
         mShowRGBA = (TextView) findViewById(R.id.show_rgba);
         mLLayout = (LinearLayout) findViewById(R.id.layout);
@@ -51,7 +56,7 @@ public class MainActivity extends Activity {
         Resources res = getResources();
         mBitmap = BitmapFactory.decodeResource(res, R.mipmap.colors);
 
-        mTakePhotots.setOnClickListener(new View.OnClickListener() {
+        mTakePhotos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String showMsg = "当前时间：" + TimeUtils.getCurTime();
@@ -60,12 +65,15 @@ public class MainActivity extends Activity {
             }
         });
 
-//        mImage1.setOnTouchListener(new ImageOnTouchListener());
+        mImage1.setOnTouchListener(new ImageOnTouchListener());
         // 验证getStreamPixel方法
-        mLLayout.setOnTouchListener(new LLayoutOnTouchListener());
-
-        // 测试
-        JsonDataUtils.buildJson();
+//        mLLayout.setOnTouchListener(new LLayoutOnTouchListener());
+        // 验证数据构成
+        mOperatingMsg = JsonDataUtils.doMockBuild();
+        // 验证数据解析
+//        JsonDataUtils.parseOperatingPhoneJson(mOperatingMsg);
+        Map<String, Integer> temp = CoordinateUtils.changeXY(mContext, mOperatingMsg);
+        LogUtils.loge(TAG, "CoordinateUtils.changeXY转换数据=" + temp);
         DeviceInfoUtils.getWindowInfo(mContext);
     }
 
@@ -76,6 +84,10 @@ public class MainActivity extends Activity {
                 try {
                     int x = (int) motionEvent.getX();
                     int y = (int) motionEvent.getY();
+
+                    if (!checkXY(mBitmap, x, y)) {
+                        return true;
+                    }
                     // 获取图片坐标点的颜色
                     int color = mBitmap.getPixel(x, y);
 //                    int r = Color.red(color);
@@ -84,6 +96,7 @@ public class MainActivity extends Activity {
 //                    int a = Color.alpha(color);
 //                    LogUtils.logd(TAG, "x=" + x + ",y=" + y + "，mBitmap.width=" + mBitmap.getWidth() + ",mBitmap.getHeight=" + mBitmap.getHeight());
 //                    String msg = "r=" + r + ",g=" + g + ",b=" + b + ",a=" + a;
+
                     mShowRGBA.setText("图片的像素值：" + color);
 //                    mShowRGBA.setTextColor(Color.rgb(r, g, b));
                 } catch (Exception e) {
@@ -94,7 +107,17 @@ public class MainActivity extends Activity {
         }
     }
 
-    private class LLayoutOnTouchListener implements View.OnTouchListener{
+    // 来检查x,y的值是否合法，0 < x < bitmap.getWidth(); y类似
+    private boolean checkXY(Bitmap bitmap, int x, int y) {
+        if (0 < x && x < bitmap.getWidth()) {
+            return true;
+        } else if (0 < y && y < bitmap.getHeight()) {
+            return true;
+        }
+        return false;
+    }
+
+    private class LLayoutOnTouchListener implements View.OnTouchListener {
 
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
