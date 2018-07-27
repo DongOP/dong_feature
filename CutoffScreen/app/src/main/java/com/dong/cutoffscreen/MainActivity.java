@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dong.cutoffscreen.utils.CoordinateUtils;
+import com.dong.cutoffscreen.utils.PointTransformUtils;
 import com.dong.cutoffscreen.utils.DeviceInfoUtils;
 import com.dong.cutoffscreen.utils.JsonDataUtils;
 import com.dong.cutoffscreen.utils.LogUtils;
@@ -72,8 +72,11 @@ public class MainActivity extends Activity {
         mOperatingMsg = JsonDataUtils.doMockBuild();
         // 验证数据解析
 //        JsonDataUtils.parseOperatingPhoneJson(mOperatingMsg);
-        Map<String, Integer> temp = CoordinateUtils.changeXY(mContext, mOperatingMsg);
-        LogUtils.loge(TAG, "CoordinateUtils.changeXY转换数据=" + temp);
+        Map<String, Integer> temp = PointTransformUtils.changeXY(mContext, mOperatingMsg);
+        LogUtils.loge(TAG, "PointTransformUtils.changeXY转换数据=" + temp);
+        if (null != temp) {
+            mTakePhotos.setText(temp.toString());
+        }
         DeviceInfoUtils.getWindowInfo(mContext);
     }
 

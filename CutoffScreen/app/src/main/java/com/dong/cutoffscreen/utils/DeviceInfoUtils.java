@@ -17,7 +17,7 @@ public class DeviceInfoUtils {
 //        return mInstance;
 //    }
     /**
-     * 获取设备的屏幕信息
+     * 获取设备的屏幕信息(不含虚拟键)
      *
      * @return
      */
@@ -37,7 +37,7 @@ public class DeviceInfoUtils {
                 + ", height=" + height);
     }
 
-    // 获取机器的密度
+    // 获取机器的密度(不含虚拟键)
     public static float getDensity(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         float density = displayMetrics.density;
@@ -45,7 +45,7 @@ public class DeviceInfoUtils {
         return density;
     }
 
-    // 获取机器的宽度
+    // 获取机器的宽度(不含虚拟键)
     public static int getWidthPixels(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         int width = displayMetrics.widthPixels;
@@ -53,7 +53,7 @@ public class DeviceInfoUtils {
         return width;
     }
 
-    // 获取机器的宽度
+    // 获取机器的宽度(不含虚拟键)
     public static int getHeightPixels(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         int height = displayMetrics.heightPixels;
