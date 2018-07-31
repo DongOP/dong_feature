@@ -135,7 +135,23 @@ public class JsonDataUtils {
         int xImageRes = 1080;
         int yImageRes = 1920;
         float density = 3;
-        return buildOperatingPhoneJson(beginTime, endTime, xStartPoint, yStartPoint, xEndPoint, yEndPoint, xImageRes, yImageRes, density);
+//        return buildOperatingPhoneJson(beginTime, endTime, xStartPoint, yStartPoint, xEndPoint, yEndPoint, xImageRes, yImageRes, density);
+        // 验证builder模式
+        JsonBuildUtils.Builder jsonBuilder = new JsonBuildUtils.Builder();
+        String msg = jsonBuilder
+                .setBeginTime(beginTime)
+                .setEndTime(endTime)
+                .setxStartPoint(xStartPoint)
+                .setyStartPoint(yStartPoint)
+                .setxEndPoint(xEndPoint)
+                .setyEndPoint(yEndPoint)
+                .setxImageRes(xImageRes)
+                .setyImageRes(yImageRes)
+                .setDensity(density)
+                .create()
+                .buildOperatingPhoneJson();
+
+        return msg;
     }
 
     // 解析操作机json数据

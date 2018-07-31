@@ -38,8 +38,8 @@ public class CalcPointPX {
      */
     public static Map<String, Integer> calcPoint(Activity activity, int x, int y, int xImageRes, int yImageRes) {
         // x , y 必须在十分之一到十分之久的区间，否则不计算平均值
-        if ((xImageRes/10) < x || x < xImageRes*(9/10)) {
-            if ((yImageRes/10) < y || y < yImageRes*(9/10)) {
+        if ((xImageRes / 10) < x || x < xImageRes * (9 / 10)) {
+            if ((yImageRes / 10) < y || y < yImageRes * (9 / 10)) {
                 LogUtils.logd(TAG, "符合平均像素值的转换要求");
                 return doCalc(activity, x, y, xImageRes, yImageRes);
             } else {
