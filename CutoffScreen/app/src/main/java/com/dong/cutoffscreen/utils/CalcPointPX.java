@@ -41,7 +41,7 @@ public class CalcPointPX {
         if ((xImageRes / 10) < x || x < xImageRes * (9 / 10)) {
             if ((yImageRes / 10) < y || y < yImageRes * (9 / 10)) {
                 LogUtils.logd(TAG, "符合平均像素值的转换要求");
-                return doCalc(activity, x, y, xImageRes, yImageRes);
+                return doCalcAvg(activity, x, y, xImageRes, yImageRes);
             } else {
                 LogUtils.loge(TAG, "y 不符合计算要求，将返回单个坐标像素信息");
                 return noCalcAvg(activity, x, y);
@@ -53,7 +53,8 @@ public class CalcPointPX {
     }
 
     // 开始计算周围坐标的平均值
-    private static Map<String, Integer> doCalc(Activity activity, int x, int y, int xImageRes, int yImageRes) {
+    private static Map<String, Integer> doCalcAvg(Activity activity, int x, int y, int xImageRes, int yImageRes) {
+        Map<String, Integer> xyMap = new HashMap<>();
 
 
         return null;
