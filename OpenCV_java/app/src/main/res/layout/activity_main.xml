@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img1Id"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/img2Id"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_below="@id/img1Id"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txtResultId"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img2Id"
+        android:gravity="center"
+        android:textColor="#ff0000"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btnId"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtResultId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="开始检测" />
+
+</RelativeLayout>
