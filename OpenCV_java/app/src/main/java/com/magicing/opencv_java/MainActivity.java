@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.magicing.opencv_java.compare.CompareUtils;
+import com.magicing.opencv_java.compare.CutBitmapUtils;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
@@ -26,11 +27,14 @@ public class MainActivity extends Activity {
     private static final int IMAGE_FLAG_1 = 1;
     private static final int IMAGE_FLAG_2 = 2;
     private Button mBtnResult;
+    private Button mCutBtn;
     private Bitmap mFirstBitmap;
     private Bitmap mSecondBitmap;
+    private Bitmap mCutBitmap;
     private TextView mTVResult;
     private ImageView mFirstIv;
     private ImageView mSecondIv;
+    private ImageView mCurIv;
     private static final Handler mHandler = new Handler();
 
     @Override
@@ -39,12 +43,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mBtnResult = (Button) findViewById(R.id.btnId);
+        mCutBtn = (Button) findViewById(R.id.cut_btn);
         mTVResult = (TextView) findViewById(R.id.txtResultId);
         // 加载图像程序中并进行显示
         mFirstBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
         mSecondBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round);
         mFirstIv = (ImageView) findViewById(R.id.img1Id);
         mSecondIv = (ImageView) findViewById(R.id.img2Id);
+        mCurIv = (ImageView) findViewById(R.id.cut_img);
         mFirstIv.setImageBitmap(mFirstBitmap);
         mSecondIv.setImageBitmap(mSecondBitmap);
         mBtnResult.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +75,30 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, IMAGE_FLAG_2);
+            }
+        });
+        mCutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cutAndShowBitmap();
+            }
+        });
+    }
+
+    private void cutAndShowBitmap() {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                long startTime = System.currentTimeMillis();
+                // 获取屏幕
+                View dView = MainActivity.this.getWindow().getDecorView();
+                dView.setDrawingCacheEnabled(true);
+                dView.buildDrawingCache();
+                Bitmap bmp = dView.getDrawingCache();
+
+                mCutBitmap = CutBitmapUtils.cupBitmap(bmp, 300, 600, 400, 700);
+                mCurIv.setImageBitmap(mCutBitmap);
+                Log.d(TAG, "do cutAndShowBitmap, 耗时 = " + (System.currentTimeMillis() - startTime) / 1000);
             }
         });
     }
@@ -149,6 +179,7 @@ public class MainActivity extends Activity {
         // 回收图片避免内存溢出
         mFirstBitmap.recycle();
         mSecondBitmap.recycle();
+        mCutBitmap.recycle();
         super.onDestroy();
     }
 
