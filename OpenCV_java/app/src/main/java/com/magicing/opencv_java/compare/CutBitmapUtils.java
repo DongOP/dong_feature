@@ -8,6 +8,8 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
+import org.opencv.core.Size;
+import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
 /**
@@ -44,4 +46,31 @@ public class CutBitmapUtils {
         Utils.matToBitmap(foreground, bitmap1);
         return bitmap1;
     }
+
+    /**
+     * 裁剪图片并重新装换大小
+     *
+     * @param imagePath
+     * @param posX
+     * @param posY
+     * @param width
+     * @param height
+     * @param outFile
+     */
+    public static Bitmap imageCut(Bitmap bitmap, int posX, int posY, int width, int height) {
+        //原始图像
+        Mat image = new Mat();
+        // 缩小图片尺寸
+        // Bitmap bm = Bitmap.createScaledBitmap(bitmap,bitmap.getWidth(),bitmap.getHeight(),true);
+        // bitmap->mat
+        Utils.bitmapToMat(bitmap, image);
+//        Mat image = Imgcodecs.imread(imagePath);
+        //截取的区域：参数,坐标X,坐标Y,截图宽度,截图长度
+        Rect rect = new Rect(posX, posY, width, height);
+        //两句效果一样
+        Mat sub = new Mat(image, rect); // Mat sub = image.submat(rect);
+
+    }
+
+
 }

@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
                 dView.buildDrawingCache();
                 Bitmap bmp = dView.getDrawingCache();
 
-                mCutBitmap = CutBitmapUtils.cupBitmap(bmp, 300, 600, 400, 700);
+                mCutBitmap = CutBitmapUtils.imageCut(bmp, 300, 600, 400, 700);
                 mCurIv.setImageBitmap(mCutBitmap);
                 Log.d(TAG, "do cutAndShowBitmap, 耗时 = " + (System.currentTimeMillis() - startTime) / 1000);
             }
