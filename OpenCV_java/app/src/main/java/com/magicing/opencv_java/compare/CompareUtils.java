@@ -18,6 +18,9 @@ import org.opencv.imgproc.Imgproc;
 public class CompareUtils {
 
     public static double comPareHist(Bitmap mBitmap1, Bitmap mBitmap2) {
+        // 需要输入的两个 Bitmap 大小是一样的
+        mBitmap1 = Bitmap.createScaledBitmap(mBitmap1, 200, 200, true);
+        mBitmap2 = Bitmap.createScaledBitmap(mBitmap2, 200, 200, true);
         Mat mat1 = new Mat();
         Mat mat2 = new Mat();
         Utils.bitmapToMat(mBitmap1, mat1);

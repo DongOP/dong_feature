@@ -108,7 +108,7 @@ public class MainActivity extends Activity {
             @Override
             public void run() {
                 double target = CompareUtils.comPareHist(mFirstBitmap, mSecondBitmap);
-                // 当target = 1时，说明图片一样
+                // 当target = 1时，说明图片一样 mFirstBitmap mSecondBitmap
                 mTVResult.setText(target == 1 ? "两张图片一致 ^_^" : "相似度 = " + target);
             }
         });

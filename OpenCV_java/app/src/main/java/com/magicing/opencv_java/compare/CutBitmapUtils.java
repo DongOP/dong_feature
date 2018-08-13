@@ -50,12 +50,10 @@ public class CutBitmapUtils {
     /**
      * 裁剪图片并重新装换大小
      *
-     * @param imagePath
      * @param posX
      * @param posY
      * @param width
      * @param height
-     * @param outFile
      */
     public static Bitmap imageCut(Bitmap bitmap, int posX, int posY, int width, int height) {
         //原始图像
@@ -69,7 +67,7 @@ public class CutBitmapUtils {
         Rect rect = new Rect(posX, posY, width, height);
         //两句效果一样
         Mat sub = new Mat(image, rect); // Mat sub = image.submat(rect);
-
+        return null;
     }
 
 
