@@ -95,10 +95,11 @@ public class MainActivity extends Activity {
                 dView.setDrawingCacheEnabled(true);
                 dView.buildDrawingCache();
                 Bitmap bmp = dView.getDrawingCache();
-
-                mCutBitmap = CutBitmapUtils.imageCut(bmp, 300, 600, 400, 700);
+//                mCutBitmap = CutBitmapUtils.cupBitmap(bmp, 700, 1200, 600, 600);
+                // 抠图
+                mCutBitmap = Bitmap.createBitmap(bmp, 700, 1200,600,600);
                 mCurIv.setImageBitmap(mCutBitmap);
-                Log.d(TAG, "do cutAndShowBitmap, 耗时 = " + (System.currentTimeMillis() - startTime) / 1000);
+                Log.d(TAG, "do cutAndShowBitmap, 耗时 = " + (System.currentTimeMillis() - startTime));
             }
         });
     }
