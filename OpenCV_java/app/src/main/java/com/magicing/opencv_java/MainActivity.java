@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import com.magicing.opencv_java.compare.CompareUtils;
 import com.magicing.opencv_java.compare.CutBitmapUtils;
+import com.magicing.opencv_java.util.CodeFormatUtils;
+import com.magicing.opencv_java.util.MockUtils;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
@@ -80,16 +82,18 @@ public class MainActivity extends Activity {
         mCutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cutAndShowBitmap();
+//                cutAndShowBitmap();
+//                testBase64();
+                MockUtils.mockClickHome(getApplicationContext());
             }
         });
     }
-
+    long startTime = System.currentTimeMillis();
     private void cutAndShowBitmap() {
         mHandler.post(new Runnable() {
             @Override
             public void run() {
-                long startTime = System.currentTimeMillis();
+
                 // 获取屏幕
                 View dView = MainActivity.this.getWindow().getDecorView();
                 dView.setDrawingCacheEnabled(true);
@@ -100,6 +104,21 @@ public class MainActivity extends Activity {
                 mCutBitmap = Bitmap.createBitmap(bmp, 700, 1200,600,600);
                 mCurIv.setImageBitmap(mCutBitmap);
                 Log.d(TAG, "do cutAndShowBitmap, 耗时 = " + (System.currentTimeMillis() - startTime));
+            }
+        });
+    }
+
+    private void testBase64() {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                //
+                Bitmap  tempBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+                String strBitmap = CodeFormatUtils.bitmapToString(tempBitmap);
+                Log.e(TAG, "do testBase64 strBitmap =" + strBitmap);
+
+                Bitmap bitmap = CodeFormatUtils.stringToBitmap(strBitmap);
+                mCurIv.setImageBitmap(bitmap);
             }
         });
     }

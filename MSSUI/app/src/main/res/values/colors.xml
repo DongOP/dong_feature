@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="jd_red">#F63415</color>
+    <color name="dialog_user_bg">#F0F0F0</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#808080</color>
+
+    <drawable name="title_line">#e4e4e4</drawable>
+    <color name="theme_color_normal">#808080</color>
+    <color name="theme_color_pressed">#ffffff</color>
+
+</resources>

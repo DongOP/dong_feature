@@ -8,15 +8,16 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dong.cutoffscreen.utils.PointTransformUtils;
 import com.dong.cutoffscreen.utils.DeviceInfoUtils;
 import com.dong.cutoffscreen.utils.JsonDataUtils;
 import com.dong.cutoffscreen.utils.LogUtils;
+import com.dong.cutoffscreen.utils.PointTransformUtils;
 import com.dong.cutoffscreen.utils.ScreenShotUtils;
 import com.dong.cutoffscreen.utils.TimeUtils;
 
@@ -40,6 +41,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 在Activity添加 避免不能被截屏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
         setContentView(R.layout.activity_main);
 
         initView();
