@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context="ui.mss.com.mssui.MainActivity">
 
     <Button
@@ -12,5 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="MSS 设置" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_pingpang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="乒乓键（关闭）" />
 
 </LinearLayout>
