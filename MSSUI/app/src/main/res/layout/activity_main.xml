@@ -21,4 +21,11 @@
         android:layout_height="wrap_content"
         android:text="乒乓键（关闭）" />
 
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/check_v_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="虚拟按键检查" />
+
 </LinearLayout>

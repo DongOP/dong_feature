@@ -51,7 +51,9 @@ public class PointTransformUtils {
                 String begin_point = jsonObject.optString(JsonDataUtils.BEGIN_POINT);
                 density = jsonObject.optInt(JsonDataUtils.DENSITY);
                 xImageRes = jsonObject.optInt(JsonDataUtils.X_IMAGE_RESOLUTION);
-                yImageRes = jsonObject.optInt(JsonDataUtils.Y_IMAGE_RESOLUTION);
+                LogUtils.loge(TAG, "changeXY, yImageRes=" + jsonObject.optInt(JsonDataUtils.Y_IMAGE_RESOLUTION));
+                yImageRes = jsonObject.optInt(JsonDataUtils.Y_IMAGE_RESOLUTION) - 126;
+                LogUtils.loge(TAG, "changeXY, yImageRes- 126=" + yImageRes);
                 // 解析起始坐标点
                 JSONArray jsonBP = new JSONArray(begin_point);
                 if (jsonBP.length() > 0) {

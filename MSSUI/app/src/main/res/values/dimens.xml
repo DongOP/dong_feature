@@ -9,4 +9,6 @@
     <dimen name="settings_dlg_width">260dp</dimen>
     <!-- dialog圆角 -->
     <dimen name="all_dialog_corner">15dp</dimen>
+
+    <dimen name="btn_textsize">10sp</dimen>
 </resources>

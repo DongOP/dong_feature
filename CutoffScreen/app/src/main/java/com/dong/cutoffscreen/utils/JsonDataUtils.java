@@ -128,8 +128,8 @@ public class JsonDataUtils {
     public static String doMockBuild() {
         String beginTime = "beginTime";
         String endTime = "endTime";
-        int xStartPoint = 900;
-        int yStartPoint = 1800;
+        int xStartPoint = 100;
+        int yStartPoint = 1000;
         int xEndPoint = 100;
         int yEndPoint = 200;
         int xImageRes = 1080;
