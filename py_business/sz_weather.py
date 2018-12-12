@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-import re
+import string
 import time
 
 # resp=urlopen('http://www.weather.com.cn/weather/101280601.shtml')
@@ -30,7 +30,7 @@ def getTodayWeather():
 	print('日期：' + dates)
 	print('风级：' + winL + ', 最低温度：' + temperatureLow + ', 最高温度：' + temperatureHigh + ', 天气：' + weather + '\n')
 
-def getTomorrowWeather():
+def getTomorrowWeather(n):
 	resp = getWebMessage()
 	soup = BeautifulSoup(resp,'html.parser')
 	tagDate = soup.find('ul', class_="t clearfix")
@@ -53,10 +53,12 @@ def getTomorrowWeather():
 	print('\n' + '---------------------------我是分割线------------------------' + '\n')
 
 def main_loop():
-
+	n = 0
 	while True:
+		n = n + 1
+		print('脚本的循环次数：', n, "\n")
 		getTodayWeather()
-		getTomorrowWeather()
+		getTomorrowWeather(n)
 		time.sleep(30)
 
 main_loop()
