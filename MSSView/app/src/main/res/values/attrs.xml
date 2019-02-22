@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CirclePercentBar">
+        <!--外侧圆环颜色-->
+        <attr name="arcColor" format="color" />
+        <!--圆环宽度-->
+        <attr name="arcWidth" format="dimension" />
+        <!--中间文字颜色-->
+        <attr name="centerTextColor" format="color" />
+        <attr name="centerTextSize" format="dimension" />
+        <!--中间圆半径-->
+        <attr name="circleRadius" format="dimension" />
+        <attr name="centerText" format="string" />
+    </declare-styleable>
+</resources>

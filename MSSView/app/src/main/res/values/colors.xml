@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorCirclebg">#100000ff</color>
+    <color name="colorStart">#1212F6</color>
+    <color name="colorEnd">#F212C6</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#a1a1a1</color>
+    <color name="theme_color_pressed">#005b7f</color>
+    <color name="menu_bg">#001a27</color>
+    <color name="yellow">#ffff00</color>
+    <color name="dark">#ff222222</color>
+    <color name="light">#ffeeeeee</color>
+    <color name="darkred">#8B0000</color><!-- 暗红色 -->
+    <color name="crimson">#DC143C</color><!--暗深红色 -->
+    <color name="del_btn_color">#ffff3d3d</color>
+    <color name="export_btn_color">#ff22ad38</color>
+    <color name="progress_white">#cccccc</color>
+    <color name="progress_green">#22ab37</color>
+    <color name="grey_translucence">#8fa1a1a1</color><!-- 半透明 -->
+    <color name="blue">#2c4c61</color>
+    <color name="black99">#99000000</color>
+    <color name="transport">#00000000</color>
+    <color name="mblue">#33b5e5</color>
+</resources>
