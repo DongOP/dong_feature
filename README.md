@@ -4,6 +4,6 @@
 
 文件夹 | 说明
 ------- | -------
+WorkSpace| Android工作验证
 py_business| 零散脚本
-WorkSpace| 工作验证测试
 pytest_space| pytest学习
