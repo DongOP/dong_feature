@@ -2,7 +2,7 @@
 
 ### 工程说明
 
-文件夹 | 说明https://github.com/DongOP/dong_feature/blob/master/README.md
+文件夹 | 说明
 ------- | -------
 py_space| Python相关
 WorkSpace| 工作验证测试
